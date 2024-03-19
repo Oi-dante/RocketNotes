@@ -1,6 +1,12 @@
+import { FiPlus, FiSearch } from "react-icons/fi";
 import { Container, Brand, Menu, Search, Content, NewNote } from "./styles";
 
+import { Note } from "../../components/Note";
+import { Input } from "../../components/Input";
+
 import { Header } from "../../components/Header";
+import { Section } from "../../components/Section";
+import { ButtonText } from "../../components/ButtonText";
 
 export function Home() {
   return (
@@ -8,16 +14,45 @@ export function Home() {
       <Brand>
         <h1>RocketNote</h1>
       </Brand>
-      
-      <Header></Header>
 
-      <Menu></Menu>
+      <Header />
 
-      <Search></Search>
+      <Menu>
+        <li>
+          <ButtonText title="Todos" />
+        </li>
 
-      <Content></Content>
+        <li>
+          <ButtonText title="React" />
+        </li>
 
-      <NewNote></NewNote>
+        <li>
+          <ButtonText title="Node" />
+        </li>
+      </Menu>
+
+      <Search>
+        <Input placeholder="Pesquisar pelo titulo" icon={FiSearch} />
+      </Search>
+
+      <Content>
+        <Section title={"Minhas notas"}>
+          <Note
+            data={{
+              title: "React",
+              tags: [
+                { id: "1", name: "react" },
+                { id: "2", name: "rocketseat" },
+              ],
+            }}
+          />
+        </Section>
+      </Content>
+
+      <NewNote>
+        <FiPlus />
+        Criar nota
+      </NewNote>
     </Container>
   );
 }
