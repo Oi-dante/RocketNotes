@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
@@ -13,7 +14,7 @@ export const Container = styled.div`
     "menu content"
     "newnote content";
 
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUN_800};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 `;
 
 export const Brand = styled.div`
@@ -25,9 +26,9 @@ export const Brand = styled.div`
 
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUN_700};
+  border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUN_900};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
   > h1 {
     font-size: 24px;
@@ -55,14 +56,14 @@ export const Search = styled.div`
 export const Content = styled.div`
   grid-area: content;
   padding: 0 64px;
-  overflow-y: auto; 
+  overflow-y: auto;
 `;
 
-export const NewNote = styled.button`
+export const NewNote = styled(Link)`
   grid-area: newnote;
-  
+
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
-  border: none;
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
   display: flex;
   align-items: center;
